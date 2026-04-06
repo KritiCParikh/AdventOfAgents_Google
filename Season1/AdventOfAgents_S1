@@ -75,4 +75,5 @@ Use this mental loop:
 3. What does the prompt instruct the model to do
 4. How is the loop or flow controlled
 5. What makes it reliable in real use
-Write notes in this structure. It will help you later when you build your own agent system.
+
+Writing notes in this structure, will help us later when we build our own agent system.
