@@ -2,4 +2,77 @@ Advent of Agents: https://adventofagents.com/2025/12/
 
 Season 1
 
-Day1: 
+An AI agent here is not just a chatbot. It has three core capabilities:
+1. Reasoning Uses an LLM to interpret goals, break them into steps, and decide what to do next.
+2. Tool usage Calls external systems like APIs, databases, or services. On Google Cloud, this often includes:
+    * Vertex AI for models
+    * Cloud Functions or Cloud Run for execution
+    * BigQuery for data
+3. Memory and state Maintains context across steps or sessions so it can behave consistently.
+
+Core building blocks you will see repeatedly
+1. LLM as the “brain”
+Most tasks will use models via Vertex AI. The LLM is responsible for:
+* understanding intent
+* planning actions
+* generating structured outputs
+You will likely work with prompting patterns like:
+* task decomposition
+* tool selection
+* structured JSON outputs
+
+2. Tools and function calling
+Agents become useful when they can act.
+A tool can be:
+* an API call
+* a database query
+* a Python function
+* a cloud service
+You define tools with:
+* name
+* description
+* input schema
+The LLM decides when to call them.
+
+3. Orchestration
+This is how the agent runs step by step.
+Common patterns:
+* ReAct loop Think → Act → Observe → Repeat
+* Planner + executor One component creates a plan, another executes
+* Single-shot tool calling Simpler, used early in the program
+
+4. Memory
+Agents improve when they remember:
+* conversation history
+* past actions
+* user preferences
+Types:
+* short-term memory session context
+* long-term memory stored in databases or vector stores
+
+5. Evaluation and guardrails
+Production-ready means:
+* safe outputs
+* consistent behavior
+* measurable performance
+You will likely see:
+* prompt evaluation
+* output validation
+* retries and fallbacks
+
+What “production-ready” actually means here
+Not just working code. It means:
+* deployed on Cloud Run or similar
+* scalable and stateless where needed
+* monitored and logged
+* handles failures gracefully
+* structured inputs and outputs
+
+How to approach each daily task
+Use this mental loop:
+1. What is the agent’s goal
+2. What tools does it need
+3. What does the prompt instruct the model to do
+4. How is the loop or flow controlled
+5. What makes it reliable in real use
+Write notes in this structure. It will help you later when you build your own agent system.
